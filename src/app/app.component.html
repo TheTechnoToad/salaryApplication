@@ -2,18 +2,61 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div style="text-align:center">
   <h1>
-    Welcome to my salary calculator V1!
+    Welcome to my salary calculator V1.3!
   </h1>
 </div>
 <div id = 'main'>
   <form id='salaryForm'>
     <mat-form-field id='salaryInput'>
-      <input matInput placeholder="Your salary" value="$">
+      <input [(ngModel)]="$salaryInput" matInput name="salaryInputField" placeholder="Your salary" value="$" (keyup)="mainCalcFunction()"/>
     </mat-form-field>
   </form>
+<form id='userForm'>
+  <mat-form-field id='userType'>
+  <mat-select placeholder='Tax Status' [(value)]="$taxStatus">
+    <mat-option value="headOfHousehold">Head of Household</mat-option>
+    <mat-option value="marriedJoint">Married Joint</mat-option>
+    <mat-option value="individual">Individual</mat-option>
+    <mat-option value="marriedIndividual">Married Filing Seperately</mat-option>
+  </mat-select>
+</mat-form-field>
+  </form>
+  <div>
+    <button mat-raised-button (click) = "mainCalcFunction()">Click Me To Calculate</button>
+    </div>
 </div>
     <table>
-          <td>One</td>
-          <td>Two<td>
-          <td>Three</td>
+      <tr>
+        <td>Percentage of income taken by taxes: </td>
+        <td>{{ $taxPercentage }}%</td>
+      </tr>
+      <tr>
+        <td>Tax Bracket: </td>
+        <td>{{ $taxBracket }}</td>
+      </tr>
+      <tr>
+          <td>Hourly: </td>
+          <td>without tax {{ $hourlyIncome }}</td>
+          <td>with tax {{ $hourlyWithTaxIncome }}</td>
+      </tr>
+      <tr>
+          <td>Daily: </td>
+          <td>without tax {{ $dailyIncome }}</td>
+          <td>with tax {{ $dailyWithTaxIncome }}</td>
+      </tr>
+      <tr>
+          <td>Weekly: </td>
+          <td>without tax {{ $weeklyIncome }}</td>
+          <td>with tax {{ $weeklyWithTaxIncome }}</td>
+      </tr>
+      <tr>
+          <td>Monthly: </td>
+          <td>without tax {{ $monthlyIncome }}</td>
+          <td>with tax {{ $monthlyWithTaxIncome }}</td>
+      </tr>
+      <tr>
+          <td>Yearly: </td>
+          <td>without tax {{ $yearlyIncome }}</td>
+          <td>with tax {{ $yearlyWithTaxIncome }}</td>
+      </tr>
       </table>
