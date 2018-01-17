@@ -5,10 +5,7 @@ import { MatButtonModule, MatCheckboxModule, MatInputModule, MatSelect } from '@
 import { MatTableModule } from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
 import { MatSelectModule } from '@angular/material/select';
-=======
->>>>>>> 5f084f96c1b32222f442e17381f152f772a25158
 
 
 @NgModule({
@@ -22,12 +19,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatCheckboxModule,
     MatInputModule,
     MatTableModule,
-<<<<<<< HEAD
     FormsModule,
     MatSelectModule
-=======
-    FormsModule
->>>>>>> 5f084f96c1b32222f442e17381f152f772a25158
   ],
   providers: [],
   bootstrap: [AppComponent]
