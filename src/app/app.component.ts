@@ -10,4 +10,15 @@ import {MatTableDataSource} from '@angular/material';
 export class AppComponent {
   title = 'app';
   //displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  $hourlyIncome;
+  $dailyIncome;
+  $weeklyIncome;
+  $monthlyIncome;
+  $salaryInput;
+  mainCalcFunction() {
+    this.$monthlyIncome = this.$salaryInput / 12;
+    this.$weeklyIncome = this.$salaryInput / 52.134;
+    this.$dailyIncome = this.$weeklyIncome / 5;
+    this.$hourlyIncome = this.$dailyIncome / 8;
+  }
 }

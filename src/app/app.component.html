@@ -8,12 +8,26 @@
 <div id = 'main'>
   <form id='salaryForm'>
     <mat-form-field id='salaryInput'>
-      <input matInput placeholder="Your salary" value="$">
+      <input [(ngModel)]="$salaryInput" name="salaryInputField" matInput placeholder="Your salary" value="$">
     </mat-form-field>
   </form>
+<button (click) = "mainCalcFunction()">Click Me To Calculate</button>
 </div>
     <table>
-          <td>One</td>
-          <td>Two<td>
-          <td>Three</td>
+      <tr>
+          <td>Hourly: </td>
+          <td>{{$hourlyIncome}}<td>
+      </tr>
+      <tr>
+          <td>Daily: </td>
+          <td>{{$dailyIncome}}</td>
+      </tr>
+      <tr>
+          <td>Weekly: </td>
+          <td>{{$weeklyIncome}}<td>
+      </tr>
+      <tr>
+          <td>Monthly: </td>
+          <td>{{$monthlyIncome}}</td>
+      </tr>
       </table>
