@@ -11,6 +11,7 @@ import { getLocaleNumberFormat } from '@angular/common';
 export class AppComponent {
   title = 'app';
   // displayedColumns = ['position', 'name', 'weight', 'symbol'];
+<<<<<<< HEAD
   range0= 0;
   range1;
   range2;
@@ -24,6 +25,8 @@ export class AppComponent {
 
   $taxPercentage;
   $taxStatus;
+=======
+>>>>>>> 5f084f96c1b32222f442e17381f152f772a25158
   tax;
   $hourlyIncome;
   $dailyIncome;
@@ -36,6 +39,7 @@ export class AppComponent {
   $weeklyWithTaxIncome;
   $monthlyWithTaxIncome;
   $yearlyWithTaxIncome;
+<<<<<<< HEAD
   $taxBracket;
 
   mainCalcFunction() {
@@ -106,6 +110,39 @@ export class AppComponent {
         }
 
     this.$taxPercentage = ((this.tax / this.$salaryInput) * 100).toFixed(2);
+=======
+
+  mainCalcFunction() {
+      if (this.$salaryInput >= 0 && this.$salaryInput < 9326) {
+        console.log('bracket 1');
+        this.tax = this.$salaryInput * .1;
+        console.log(this.tax);
+      } else if (this.$salaryInput >= 9326 && this.$salaryInput < 37951) {
+        console.log('bracket 2');
+        this.tax = ((this.$salaryInput - 9325) * .15 ) + 932.50;
+        console.log(this.tax);
+      } else if (this.$salaryInput >= 37951 && this.$salaryInput < 91901) {
+        this.tax = ((this.$salaryInput - 37950) * .25 ) + 5226.25;
+        console.log('bracket 3');
+        console.log(this.tax);
+      } else if (this.$salaryInput >= 91901 && this.$salaryInput < 191651) {
+        this.tax = ((this.$salaryInput - 91900) * .28 ) + 18713.75;
+        console.log('bracket 4');
+        console.log(this.tax);
+      } else if (this.$salaryInput >= 191651 && this.$salaryInput < 416701) {
+        this.tax = ((this.$salaryInput - 191650) * .33 ) + 46643.75;
+        console.log('bracket 5');
+        console.log(this.tax);
+      } else if (this.$salaryInput >= 416701 && this.$salaryInput < 418401) {
+        this.tax = ((this.$salaryInput - 416700) * .35 ) + 120910.25;
+        console.log('bracket 6');
+        console.log(this.tax);
+      } else if (this.$salaryInput >= 418401) {
+        this.tax = ((this.$salaryInput - 418400) * .396 ) + 121505.25;
+        console.log('bracket 7');
+        console.log(this.tax);
+        }
+>>>>>>> 5f084f96c1b32222f442e17381f152f772a25158
     this.$yearlyIncome = (this.$salaryInput);
     this.$monthlyIncome = (this.$yearlyIncome / 12).toFixed(2);
     this.$weeklyIncome = (this.$yearlyIncome / 52.134).toFixed(2);
